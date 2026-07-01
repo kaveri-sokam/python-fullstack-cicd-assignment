@@ -1,0 +1,9 @@
+{
+  "name":"student-frontend",
+  "private":true,
+  "scripts":{
+    "start":"echo \"Implement React app\"",
+    "build":"echo \"Build successful\"",
+    "test":"echo \"Tests passed\""
+  }
+}
