@@ -1,0 +1,48 @@
+node {
+    try {
+        stage('Checkout Source Code') {
+            checkout scm  
+        }
+        stage('Install Backend Dependencies') {
+            dir('backend') {
+                bat 'pip install -r requirements.txt'
+            }
+        }
+        stage('Install Frontend Dependencies') {
+            dir('frontend') {
+                bat 'npm install'
+            }
+        }
+        stage('Run Backend Tests') {
+            dir('backend') {
+                bat 'pytest'
+            }
+        }
+        stage('Build Frontend') {
+            dir('frontend') {
+                bat 'npm run build'
+            }
+        }
+        stage('SonarQube Analysis') {
+            withSonarQubeEnv('SonarQube') {
+                bat 'sonar-scanner'
+            }
+        }
+        stage('Build Docker Images') {
+            bat 'docker compose build'
+        }
+        stage('Deploy using Docker Compose') {
+            bat 'docker compose up -d'
+        }
+        stage('Smoke Test') {
+            bat 'curl http://localhost:3000'
+        }
+        stage('Cleanup') {
+            bat 'docker system prune -f'
+        }
+    }
+    catch(Exception e){
+        currentBuild.result = 'FAILURE'
+        throw e
+    }
+}
