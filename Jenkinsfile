@@ -53,18 +53,18 @@ pipeline {
         }
         stage('Build Docker Images') {
             steps {
-                bat 'docker-compose build'
+                bat 'docker compose build'
             }
         }
         stage('Deploy using Docker Compose') {
             steps {
-                bat 'docker-compose up -d'
+                bat 'docker compose up -d'
             }
         }
         stage('Smoke Test') {
             steps {
                 sleep(time: 15, unit: 'SECONDS')
-                bat 'curl http://localhost:8000/health'
+                bat 'curl http://localhost:8000'
             }
         }
         stage('Cleanup') {
