@@ -63,7 +63,7 @@ pipeline {
         }
         stage('Smoke Test') {
             steps {
-                bat 'timeout /t 15'
+                sleep(time: 15, unit: 'SECONDS')
                 bat 'curl http://localhost:8000/health'
             }
         }
