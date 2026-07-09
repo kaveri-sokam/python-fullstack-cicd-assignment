@@ -82,16 +82,19 @@ docker ps
 ![Application Running](screenshots/application-running.png)
 
 
+# Challenges faced
 
+During this project, I have faced several challenges:
+- Resolving Git merge conflicts in the README.md file
+- Configuring the GitHub webhook to trigger Jenkins builds automatically
+- Setting up Jenkins Pipeline and installing the required plugins
+- Integrating SonarQube with Jenkins for code quality analysis
+- Building and running the Docker container successfully
+- Debugging Pipeline errors and verifying successful builds
+
+# Conclusion
+
+This project successfully implemented a complete CI/CD pipeline using Git, GitHub, Jenkins, Docker, and SonarQube. The pipeline automates code checkout, build, testing, code quality analysis, deployment, improving software quality and reducing manual effort.
 
 
 Testing Jenkins GitHub Webhook
-
-
-
-
-
-
-
-
-
