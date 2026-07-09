@@ -50,10 +50,10 @@ The Pipeline contains the following stages:
 
 # Docker Commands
 
-docker compose build
-docker compose up -d
-docker compose down 
-docker ps
+- docker compose build
+- docker compose up -d
+- docker compose down 
+- docker ps
 
 # SonarQube Configuration
 
@@ -97,4 +97,3 @@ During this project, I have faced several challenges:
 This project successfully implemented a complete CI/CD pipeline using Git, GitHub, Jenkins, Docker, and SonarQube. The pipeline automates code checkout, build, testing, code quality analysis, deployment, improving software quality and reducing manual effort.
 
 
-Testing Jenkins GitHub Webhook
