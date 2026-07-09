@@ -65,17 +65,21 @@ The Pipeline contains the following stages:
 
 # Screenshots
 
+
 ## Jenkins Successful Pipeline
 
 ![Jenkins Pipeline](screenshots/jenkins-pipeline.png)
+
 
 ## SonarQube Dashboard
 
 ![SonarQube Dashboard](screenshots/sonarqube-dashboard.png)
 
+
 ## Docker Containers Running
 
 ![Docker Containers](screenshots/docker-containers.png)
+
 
 ## Application Running
 
